@@ -1,0 +1,23 @@
+{
+  "name": "middleman",
+  "version": "0.0.0",
+  "authors": [
+    "Keita Nakanishi <contact@keita.co>"
+  ],
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.3"
+  }
+}

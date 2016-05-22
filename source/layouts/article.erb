@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title><%= current_article.title unless current_article.nil? %> - blog.nakanishy.com</title>
+  <%= stylesheet_link_tag 'nakanishy' %>
+  <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
+  <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+</head>
+<body>
+  <%= partial 'partials/header' %>
+  <div class="content">
+    <div class="wrapper">
+      <article class="article">
+        <header>
+          <h1><%= current_article.title %></h1>
+          <date datetime="<%= current_article.date %>">
+            <%= current_article.date.strftime('%b %e, %Y') %>
+          </date>
+          <ul class="tags">
+            <% current_article.tags.each do |tag| %>
+              <li><a href="<%= tag_path(tag) %>"><%= tag %></a></li>
+            <% end %>
+          </ul>
+        </header>
+        <%= yield %>
+        <footer>
+          <ul class="tags">
+            <% current_article.tags.each do |tag| %>
+              <li><a href="<%= tag_path(tag) %>"><%= tag %></a></li>
+            <% end %>
+          </ul>
+          <div class="next-prev-link">
+            <div class="previous">
+              <% previous_article = current_article.previous_article %>
+              <% if previous_article %>
+                <% link_to  previous_article.url, :class => "previous-link" do %>
+                  <span class="arrow left"></span>
+                  <span><%= previous_article.title %></span>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="next">
+              <% next_article = current_article.next_article %>
+              <% if next_article %>
+                <% link_to next_article.url, :class => "next-link" do %>
+                  <span><%= next_article.title %></span>
+                  <span class="arrow"></span>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </footer>
+        <%= partial 'partials/disqus' %>
+      </article>
+    </div>
+  </div>
+  <%= partial 'partials/footer' %>
+  <%= javascript_include_tag 'all' %>
+</body>
+</html>

@@ -1,0 +1,34 @@
+---
+pageable: true
+per_page: 12
+---
+
+<h1 style="margin-bottom: 20px;color: #aaa;font-size: 1.2rem; font-weight: bold;">Articles tagged '<%= tagname %>'</h1>
+
+<% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<% page_articles.each_with_index do |article, i| %>
+  <section class="article-item">
+    <% link_to article do %>
+      <span class="title">
+        <%= article.title %>
+      </span>
+      <span class="description">
+        <%= article.summary(100).gsub(/<\/?[^>]*>/, "") %>
+      </span>
+      <date><%= article.date.strftime('%b %e, %Y') %></date>
+    <% end %>
+  </section>
+<% end %>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>

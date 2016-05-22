@@ -1,0 +1,230 @@
+$article-margin-bottom: 1.2rem;
+.article {
+  /* margin */
+  header {
+    margin-bottom: 3rem;
+  }
+  h1 {
+    margin-bottom: $article-margin-bottom;
+  }
+  h2 {
+    margin: 3rem 0 $article-margin-bottom;
+  }
+  h3 {
+    margin: 2rem 0 $article-margin-bottom;
+  }
+  h4 {
+    margin: $article-margin-bottom 0;
+  }
+  p, ul, ol, blockquote, .highlight {
+    margin: $article-margin-bottom 0;
+  }
+  footer {
+    margin-top: 4rem;
+  }
+
+  header {
+    h1 {
+      font-family: inherit;
+    }
+    date {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: .9rem;
+      font-family: inherit;
+      color: #80828a;
+    }
+    .tags {
+      margin: 0;
+      font-family: inherit;
+    }
+  }
+  p, ul, ol, blockquote, date {
+    font-family: Times, "Times New Roman", "ヒラギノ明朝 ProN",'Hiragino Mincho ProN', "游明朝", "Yu Mincho", serif;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  img {
+    max-width: 100%;
+  }
+  ul, ol {
+    margin-left: 3rem;
+  }
+  ul { list-style-type: disc; }
+  ol { list-style-type: decimal; }
+  em {
+    font-style: italic;
+  }
+  blockquote {
+    padding: 0 1.25rem;
+    border-left: 4px solid #eee;
+    color: #888;
+    font-style: italic;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    &:before {
+      content: '///';
+      display: block;
+      margin-top: -10px;
+      padding: 2px 4px;
+      color: #eee;
+      line-height: 1;
+    }
+  }
+  code {
+    margin-right: 4px;
+    margin-left: 4px;
+    padding: 2px 6px;
+    background: #f6f7f8;
+    border-radius: 2px;
+    border: 1px solid #e8ebee;
+    color: #50525a;
+    font-size: .9rem;
+    font-family: Consolas, Monaco, Menlo, Courier, monospace;
+    line-height: 1;
+    vertical-align: 3px;
+  }
+  .highlight {
+    /*
+    margin-left: calc((100vw - 800px)/2 * -1);
+    margin-right: calc((100vw - 800px)/2 * -1);
+    padding: 1rem calc((100vw - 800px)/2);
+    */
+    padding: 14px 16px;
+    // border-radius: 3px;
+    border-top: 1px solid #e0e2ea;
+    border-bottom: 1px solid #e0e2ea;
+    font-size: 1rem;
+    font-family: Consolas, Monaco, Menlo, Courier, monospace;
+    line-height: 1.45;
+    overflow-x: auto;
+    code {
+      margin: 0;
+      padding: 0;
+      background: inherit;
+      border: none;
+      border-radius: 0;
+      font-size: inherit;
+      font-family: inherit;
+      line-height: 1;
+    }
+  }
+  footer {
+    .tags {
+      margin: 0;
+      font-family: inherit;
+    }
+  }
+}
+
+.tags {
+  display: inline-block;
+  list-style: none;
+  li {
+    display: inline-block;
+    margin-right: 5px;
+    a {
+      padding: 4px 12px 5px;
+      border-radius: 3px;
+      background: #f6f7f8;
+      color: #70727a;
+      font-size: .8rem;
+      font-weight: 400;
+      &:hover {
+        background: #e8ebee;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.arrow {
+  display:inline-block;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  border-top:3px solid #a0a2aa;
+  border-right:3px solid #aaa;
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.arrow.left {
+  -ms-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.next-prev-link {
+  position: relative;
+  margin: 2rem 0;
+  display: -webkit-flex;
+  display: flex;
+  .previous, .next {
+    position: relative;
+    margin: 0 20px;
+    .next-link, .previous-link {
+      display: block;
+      font-size: .9rem;
+      line-height: 1.3;
+    }
+  }
+  .previous {
+    -webkit-flex: 1;
+    flex: 1;
+    .arrow {
+      position: absolute;
+      top: 3px;
+      left: -20px;
+    }
+  }
+  .next {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: right;
+    .arrow {
+      position: absolute;
+      top: 3px;
+      right: -20px;
+    }
+  }
+}
+
+@media screen and (max-width: $inner-width) {
+  .article {
+    .highlight {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 14px 16px;
+    }
+  }
+  .next, .previous {
+    .next-link, .previous-link {
+      .arrow {
+        top: 4px;
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}
+

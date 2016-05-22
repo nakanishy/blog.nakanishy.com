@@ -1,0 +1,18 @@
+.footer {
+  padding: 13px 0;
+  border-top: 1px solid #e8ebee;
+  background: #fafbfc;
+  color: #aaa;
+  font-size: .9rem;
+  .left {
+    float: left;
+    margin-left: 30px;
+    a {
+      color: #888;
+    }
+  }
+  .right {
+    float: right;
+    margin-right: 30px;
+  }
+}
