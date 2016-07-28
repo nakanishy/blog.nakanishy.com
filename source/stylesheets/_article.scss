@@ -16,8 +16,11 @@ $article-margin-bottom: 1.2rem;
   h4 {
     margin: $article-margin-bottom 0;
   }
-  p, ul, ol, blockquote, .highlight {
+  p, ul, ol, blockquote {
     margin: $article-margin-bottom 0;
+  }
+  pre {
+    margin: 1.6rem 0;
   }
   footer {
     margin-top: 4rem;
@@ -100,12 +103,27 @@ $article-margin-bottom: 1.2rem;
     line-height: 1;
     vertical-align: 3px;
   }
+  pre {
+    border-top: 1px solid #e0e2ea;
+    border-bottom: 1px solid #e0e2ea;
+    background: #fff;
+    code[class*="language-"] {
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      font-size: 1rem;
+      font-family: inherit;
+      line-height: 1;
+      vertical-align: 0;
+    }
+  }
+  /*
   .highlight {
-    /*
     margin-left: calc((100vw - 800px)/2 * -1);
     margin-right: calc((100vw - 800px)/2 * -1);
     padding: 1rem calc((100vw - 800px)/2);
-    */
     padding: 14px 16px;
     // border-radius: 3px;
     border-top: 1px solid #e0e2ea;
@@ -125,6 +143,7 @@ $article-margin-bottom: 1.2rem;
       line-height: 1;
     }
   }
+  */
   footer {
     .tags {
       margin: 0;
