@@ -1,10 +1,11 @@
 .article-item {
   margin-bottom: 30px;
   a {
+    display: block;
     &:hover {
       text-decoration: none;
       .title {
-        color: $green;
+        color: $link-color;
       }
     }
     .title {
