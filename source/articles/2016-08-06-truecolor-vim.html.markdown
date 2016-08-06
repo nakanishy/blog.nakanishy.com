@@ -1,5 +1,5 @@
 ---
-title: ターミナル環境 (iTerm2, vim, tmux) をフルカラーで使う
+title: ターミナル環境 (iTerm, vim, tmux) をフルカラーで使う
 date: 2016-08-06 21:50 JST
 tags: terminal, neovim, tmux
 published: true
@@ -42,7 +42,7 @@ Nightly Buildは開発中のビルドであるため、深刻なバグを含ん�
 
 ## 2. vim
 
-vim (v7.4.2156 以降) または[Neovim](https://github.com/neovim/neovim)がTrue Colorをサポートしている。
+vim (patch-7.4.1778 以降) または[Neovim](https://github.com/neovim/neovim)がTrue Colorをサポートしている。
 NeovimはVimのソースコードをリファクタリングするプロジェクト。今回はせっかくなのでNeovimを導入する。
 
 インストールは[homebrew-neovim](https://github.com/neovim/homebrew-neovim/blob/master/README.md)を参考に。
