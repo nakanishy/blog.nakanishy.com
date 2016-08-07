@@ -2,6 +2,7 @@
 title: ターミナル環境 (iTerm, vim, tmux) をフルカラーで使う
 date: 2016-08-06 21:50 JST
 tags: terminal, neovim, tmux
+description: iTerm2, neovim, tmuxをTrue Color (24 bit color) で使うための方法
 published: true
 ---
 
