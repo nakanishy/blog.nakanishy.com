@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="keywords" content="<%= current_page.data.tags unless current_page.data.tags.nil? %>">
   <meta name="description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
+  <meta property="og:title" content="<%= current_article.title unless current_article.nil? %> - blog.nakanishy.com">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://blog.nakanishy.com">
+  <meta property="og:site_name" content="blog.nakanishy.com">
+  <meta property="og:description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
+  <meta property="fb:app_id" content="1086943964688762">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<%= current_article.title unless current_article.nil? %> - blog.nakanishy.com">
+  <meta name="twitter:description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
+  <meta name="twitter:creator" content="nakanishy">
   <title><%= current_article.title unless current_article.nil? %> - blog.nakanishy.com</title>
   <link rel="shortcut icon" href="./images/favicon.ico">
   <%= stylesheet_link_tag 'nakanishy' %>
