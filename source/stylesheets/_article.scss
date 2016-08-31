@@ -167,6 +167,7 @@ $article-margin-bottom: 1.2rem;
 }
 
 .tags {
+  display: inline-block;
   list-style: none;
   li {
     display: inline-block;
