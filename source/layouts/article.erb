@@ -39,11 +39,25 @@
         </header>
         <%= yield %>
         <footer>
-          <ul class="tags">
-            <% current_article.tags.each do |tag| %>
-              <li><a href="<%= tag_path(tag) %>"><%= tag %></a></li>
-            <% end %>
-          </ul>
+          <div class="tag-sns-wrap">
+            <ul class="tags">
+              <% current_article.tags.each do |tag| %>
+                <li><a href="<%= tag_path(tag) %>"><%= tag %></a></li>
+              <% end %>
+            </ul>
+            <ul class="sns-links">
+              <li class="twitter">
+                <a href="https://twitter.com/intent/tweet?url=https://blog.nakanishy.com<%= current_page.url %>&text=<%= current_page.data.title %>" title="Twitterで共有" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;">
+                  <i class="lsf">twitter</i>
+                </a>
+              </li>
+              <li class="hatebu">
+                <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https://blog.nakanishy.com<%= current_page.url %>" title="はてブで保存" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=510');return false;" >
+                  <i class="lsf">hatenabookmark</i>
+                </a>
+              </li>
+            </ul>
+          </div>
           <div class="next-prev-link">
             <div class="previous">
               <% previous_article = current_article.previous_article %>

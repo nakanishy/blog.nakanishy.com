@@ -153,15 +153,20 @@ $article-margin-bottom: 1.2rem;
   }
   */
   footer {
-    .tags {
+    .tags, .sns-links {
       margin: 0;
       font-family: inherit;
     }
   }
 }
 
+.tag-sns-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .tags {
-  display: inline-block;
   list-style: none;
   li {
     display: inline-block;
@@ -176,6 +181,40 @@ $article-margin-bottom: 1.2rem;
       &:hover {
         background: #e8ebee;
         text-decoration: none;
+      }
+    }
+  }
+}
+
+.sns-links {
+  list-style: none;
+
+  // 共通
+  li {
+    display: inline-block;
+    margin-right: 5px;
+    a {
+      padding: 5px;
+      border-radius: 2px;
+      color: #ccc;
+      font-size: 30px;
+      transition: color .2s ease;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .twitter {
+    a {
+      &:hover {
+        color: #59adec;
+      }
+    }
+  }
+  .hatebu {
+    a {
+      &:hover {
+        color: #008fde;
       }
     }
   }
