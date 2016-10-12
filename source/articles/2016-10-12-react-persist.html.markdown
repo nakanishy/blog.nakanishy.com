@@ -1,8 +1,8 @@
 ---
-title: Reactのイベントコールバックで非同期にeventプロパティを参照する
+title: Reactのイベントコールバックで非同期にeventオブジェクトを参照する
 date: 2016-10-12 19:30 JST
 tags: react
-description: Reactのイベントコールバックで非同期にeventプロパティを参照する方法
+description: Reactのイベントコールバックにおいて､非同期的にeventオブジェクトを参照する方法｡
 published: true
 ---
 
