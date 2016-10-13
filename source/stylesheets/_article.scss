@@ -2,7 +2,6 @@ $article-margin-bottom: 1.2rem;
 .article {
   /* margin */
   header {
-    margin-top: 1.5rem;
     margin-bottom: 2.5rem;
   }
   h1 {
@@ -80,7 +79,6 @@ $article-margin-bottom: 1.2rem;
     padding: 0 1.25rem;
     border-left: 4px solid #eee;
     color: #888;
-    font-style: italic;
   }
   hr {
     border: 0;
@@ -106,7 +104,7 @@ $article-margin-bottom: 1.2rem;
     font-size: .9rem;
     font-family: Consolas, Monaco, Menlo, Courier, monospace;
     line-height: 1;
-    vertical-align: 3px;
+    vertical-align: 1px;
   }
   pre {
     border-top: 1px solid #e0e2ea;

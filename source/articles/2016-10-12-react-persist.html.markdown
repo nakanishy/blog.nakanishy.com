@@ -33,7 +33,7 @@ Reactのドキュメントの[Event pooling](https://facebook.github.io/react/do
 
 非同期でアクセスしたかったら`event.persist()`使ってくれ､と書かれている｡なのでイベントコールバックの中で呼んであげれば非同期で`event`を参照することができる｡
 
-<pre class="language-bash"><code>function clickHandler(event) {
+<pre class="language-javascript"><code>function clickHandler(event) {
   event.persist();
 
   this.setState({
