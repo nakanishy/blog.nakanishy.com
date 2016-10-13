@@ -2,8 +2,8 @@ $article-margin-bottom: 1.2rem;
 .article {
   /* margin */
   header {
-    margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
   }
   h1 {
     margin-bottom: $article-margin-bottom;
@@ -118,7 +118,7 @@ $article-margin-bottom: 1.2rem;
       background: none;
       border: none;
       border-radius: 0;
-      font-size: 1rem;
+      font-size: .9rem;
       font-family: inherit;
       line-height: 1;
       vertical-align: 0;
