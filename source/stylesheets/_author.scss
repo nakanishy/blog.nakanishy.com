@@ -1,0 +1,70 @@
+.author {
+  .inner {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+  }
+
+  p {
+    margin: 0;
+    color: $font-color-sub;
+  }
+
+  .portrait {
+    margin-right: 30px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+
+  .social-links {
+    margin: 5px 0 0 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 15px;
+
+      .lsf {
+        margin-right: 6px;
+        font-size: 20px;
+        vertical-align: -1px;
+      }
+
+      a {
+        border-radius: 2px;
+        padding: 2px 6px 3px;
+        font-size: 15px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .twitter {
+      a {
+        color: #59adec;
+
+        &:hover {
+          color: #fff;
+          background-color: #59adec;
+        }
+      }
+    }
+    .github {
+      a {
+        color: $font-color;
+
+        &:hover {
+          color: #fff;
+          background-color: $font-color;
+        }
+      }
+    }
+  }
+}
