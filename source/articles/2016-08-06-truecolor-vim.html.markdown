@@ -10,7 +10,7 @@ MacのターミナルやiTermなどターミナル環境において、デフォ
 [iTerm2を256色で使用する](http://qiita.com/muniere/items/e6c5c48a541401ee5af3)方法もあるが、色数としてはまだまだ不十分。
 そこで、ターミナル環境においてもTrue Color (24bit color) 約1667万色を使えるようにしてみた、という記録。
 
-[![true color vim](true-color-vim.png 'true color vim')](true-color-vim.png)
+[![true color vim](true-color-vim.png 'true color vim')](/images/true-color-vim.png)
 
 ## True Colorが表示できる環境
 
