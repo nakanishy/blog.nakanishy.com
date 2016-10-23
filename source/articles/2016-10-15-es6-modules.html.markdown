@@ -1,0 +1,166 @@
+---
+title: ES6のモジュール（import/export）について理解を深める
+date: 2016-10-15 23:14 JST
+tags: ES6
+description: ES6のimportとexportは使えるのは使えるが、
+published: false
+---
+
+ES6において`import`と`export`は一番よく使う構文ではあるにも関わらず、真面目に調べたことがなったため、その備忘録として記しておく。
+
+※ ES6の仕様書をもとにした内容であり、Babel等のトランスパイラの挙動と異なる場合があるため注意。
+
+## モジュールについて
+
+モジュールとは、を実現するような機能のをこと指す。JavaScriptがブラウザで動作するスクリプト言語として作られた経緯もあり、モジュールを実現するような機能はES5以前には実装されていなかった。そのため、AMD.jsなどのライブラリを使用し、モジュラリティなコードを書いてきた。
+
+ES6が策定され、JavaScriptに初めてbuild-inのモジュールが入った。モジュールは1ファイルにつき1モジュールであり、`import`と`export`の構文を使ってモジュールの読み込んだり、他のモジュールから利用可能にしたりする。
+
+- モジュールはロード時に一度だけ実行されるコードの一片である
+- コード中には宣言がある（変数宣言、関数宣言、etc.）
+    - これらの宣言のスコープはそのモジュール内で閉じられている
+- 
+
+
+## exportについて
+
+
+モジュールから関数や変数等をexportする方法は2つある。
+
+1. Named exports
+2. Default exports
+
+この2つの方法は同時に使用することもできるが、それぞれ別々に使うのが望ましい。
+
+### Named exports
+
+Named exportsは、1つのモジュールにつき複数の値やオブジェクトをexportすることができるものである。
+
+<pre class="language-javascript"><code>// lib.js
+export const foo = 'foo';
+export function bar() {
+  return 'bar';
+};
+</code></pre>
+
+モジュールを読み込む際は、`{}`の中に必要とする値やオブジェクトを列挙する。
+
+<pre class="language-javascript"><code>import { foo, bar } from 'lib';
+
+console.log(foo);   // 'foo'
+console.log(bar()); // 'bar'
+</code></pre>
+
+または、exportされているすべての値やオブジェクトをまとめて読み込むこともできる。
+
+<pre class="language-javascript"><code>import * as lib from 'lib';
+
+console.log(lib.foo);   // 'foo'
+console.log(lib.bar()); // 'bar'
+</code></pre>
+
+### Default exports
+
+Default exportsは、1つの値のみをexportするものである。クラスをexportする時なんかによく使われる方法。利点はimportするときの記法がシンプルになること。
+
+<pre class="language-javascript"><code>// myFunc.js
+export default function ()
+</code></pre>
+
+通常の関数式であるため末尾にセミコロンは不要である。
+
+**しらべる: importする側の名前はimport側が決めて良い？**
+
+<pre class="language-javascript"><code>import myFunc from 'myFunc';
+myFunc();
+</code></pre>
+
+<pre class="language-javascript"><code>// MyClass.js
+export default class {}
+</code></pre>
+
+<pre class="language-javascript"><code>import MyClass from 'MyClass';
+const instance = new MyClass();
+</code></pre>
+
+
+Default exportsには2つの書き方がある。
+
+1. Labeling declarations
+2. 値を直接export
+
+#### Default exports: Labeling declarations
+
+関数やクラスを定義する際、前に`module exports`を付けてexportする方法。
+
+<pre class="language-javascript"><code>export default function foo() {}
+export default class Bar {}
+</code></pre>
+
+このケースでは関数名やクラス名を省略することもできる。...
+
+<pre class="language-javascript"><code>export default function () {}
+export default class {}
+</code></pre>
+
+この2行を見ると、あなたは高予想するかもしれない:export default の次の値は式であると。
+それらは一貫性の理由による宣言である: 
+named declarationsはanonymous versionに変換される？
+
+式として評価したい場合、カッコを付ける必要がある。
+
+<pre class="language-javascript"><code>export default (function () {});
+export default (class {});
+</code></pre>
+
+#### style 2
+
+<pre class="language-javascript"><code>export default 'abc';
+export default foo();
+export default /^xyz$/;
+export default 5 * 7;
+export default { no: false, yes: true };
+</code></pre>
+
+`export default`の後に式を置くパターン。
+これは以下のように評価される。
+
+<pre class="language-javascript"><code>const __default__ = 式;
+export { __default__ as default }; // (A)
+</code></pre>
+
+Aはexporting clauseと呼ばれるもの。あとで書く。
+
+## importとexportはトップレベルでなければならない
+
+<pre class="language-javascript"><code>if (Math.random()) {
+    import 'foo'; // SyntaxError
+}
+
+// You can’t even nest `import` and `export`
+// inside a simple block:
+{
+    import 'foo'; // SyntaxError
+}</code></pre>
+## importはどこに書いても良い
+
+例えば、以下のようなコードでも問題なく動作する。
+
+<pre class="language-javascript"><code>foo();
+
+import { foo } from 'my_module';
+</code></pre>
+
+## Default exportはnamed exportの特殊な場合
+
+実は、Default exportは`default`という特別な名前でNamed exportされたものにすぎない。従って、以下の2つのコードは同じように評価される。
+
+<pre class="language-javascript"><code>export default function foo() {}
+</code></pre>
+
+<pre class="language-javascript"><code>function foo() {}
+export { foo as default };
+</code></pre>
+
+## 参考
+[16. Modules - Exploring ES6](http://exploringjs.com/es6/)

@@ -1,8 +1,8 @@
 ---
 title: Reactのイベントコールバックで非同期にeventオブジェクトを参照する
 date: 2016-10-12 19:30 JST
-tags: react
-description: Reactのイベントコールバックにおいて､非同期的にeventオブジェクトを参照する方法｡
+tags: React
+description: Reactのイベントコールバックにおいて、非同期的にeventオブジェクトを参照しようとするとエラーが出て怒られる。その原因と解決法について。
 published: true
 ---
 
@@ -12,7 +12,7 @@ Reactでイベントコールバックの`event`オブジェクトに非同期�
   this.setState({
     foo: 'bar'
   }, function () {
-    event.target.value = null; // エラー
+    console.log(event.target.value); // error
   });
 }</code>
 </pre>
@@ -39,7 +39,7 @@ Reactのドキュメントの[Event pooling](https://facebook.github.io/react/do
   this.setState({
     foo: 'bar'
   }, function () {
-    event.target.value = null; // ok
+    console.log(event.target.value); // ok
   });
 }</code>
 </pre>

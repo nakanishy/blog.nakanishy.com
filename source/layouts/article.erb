@@ -10,11 +10,13 @@
   <meta property="og:url" content="https://blog.nakanishy.com">
   <meta property="og:site_name" content="blog.nakanishy.com">
   <meta property="og:description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
+  <meta property="og:image" content="https://blog.nakanishy.com/images/<%= current_resource.data.eyecatch %>">
   <meta property="fb:app_id" content="1086943964688762">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<%= current_article.title unless current_article.nil? %> - blog.nakanishy.com">
   <meta name="twitter:description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
-  <meta name="twitter:creator" content="nakanishy">
+  <meta name="twitter:creator" content="@nakanishy">
+  <meta name="twitter:image:src" content="https://blog.nakanishy.com/images/<%= current_resource.data.eyecatch %>">
   <title><%= current_article.title unless current_article.nil? %> - blog.nakanishy.com</title>
   <link rel="shortcut icon" href="./images/favicon.ico">
   <%= stylesheet_link_tag 'nakanishy' %>
