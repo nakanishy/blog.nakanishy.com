@@ -117,6 +117,12 @@ ready do
   sprockets.append_path "#{root}/vendor/components"
 end
 
+activate :deploy do |deploy|
+  deploy.method   = :git
+  deploy.branch   = 'gh-pages'
+  deploy.strategy = :force_push
+end
+
 =begin
 ready do
   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))

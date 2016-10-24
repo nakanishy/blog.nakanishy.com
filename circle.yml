@@ -1,0 +1,28 @@
+machine:
+  ruby:
+    version: 2.2.3
+  timezone:
+    Asia/Tokyo
+
+general:
+  artifacts:
+    - "build"
+  branches:
+    ignore:
+      - gh-pages
+
+dependencies:
+  pre:
+    - bower install
+
+test:
+  post:
+    - bundle exec middleman build
+
+deployment:
+  publish:
+    branch: master
+    commands:
+      - git config --global user.name "Keita Nakanishi"
+      - git config --global user.email "nakanishy@yahoo.com"
+      - bundle exec middleman deploy
