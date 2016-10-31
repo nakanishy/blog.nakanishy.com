@@ -9,9 +9,9 @@ published: true
 
 先日、JavaScriptの新たなパッケージマネージャー[Yarnが公開](https://code.facebook.com/posts/1840075619545360/yarn-a-new-package-manager-for-javascript/)され、フロント界隈で話題なので調べた。
 
-## Yarnとは
-
 [![Yarn](yarn.jpg 'Yarn')](/images/yarn.jpg)
+
+## Yarnとは
 
 Yarnは、FacebookがGoogle等の開発者と協力して開発したJavaScriptのパッケージマネージャーである。
 npmとBowerのレジストリを使用するため、既にnpmやBowerで依存関係を管理している場合、導入のコストはかなり低い。

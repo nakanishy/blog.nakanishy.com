@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="keywords" content="nakanishy,Web,開発,デザイン">
-  <meta name="description" content="Webフロントエンドに関する備忘録など">
-  <meta property="og:title" content="blog.nakanishy.com">
+  <meta name="description" content="Webフロントエンドに関する備忘録">
+  <meta property="og:title" content="@nakanishy's blog">
   <meta property="og:type" content="blog">
   <meta property="og:url" content="https://blog.nakanishy.com">
-  <meta property="og:site_name" content="blog.nakanishy.com">
-  <meta property="og:description" content="Webフロントエンドに関する備忘録など">
+  <meta property="og:site_name" content="@nakanishy's blog">
+  <meta property="og:description" content="Webフロントエンドに関する備忘録">
   <meta property="fb:app_id" content="1086943964688762">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="blog.nakanishy.com">
-  <meta name="twitter:description" content="Webフロントエンドに関する備忘録など">
+  <meta name="twitter:title" content="@nakanishy's blog">
+  <meta name="twitter:description" content="Webフロントエンドに関する備忘録">
   <meta name="twitter:creator" content="nakanishy">
-  <title>blog.nakanishy.com<%= ' - ' + current_article.title unless current_article.nil? %></title>
+  <title>@nakanishy's blog<%= ' - ' + current_article.title unless current_article.nil? %></title>
   <%= stylesheet_link_tag 'nakanishy' %>
-  <link rel="shortcut icon" href="./images/favicon.ico">
+  <link rel="icon" type="image/png" href="./images/favicon.png">
   <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
   <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
 </head>
@@ -28,7 +28,6 @@
       <%= yield %>
     </div>
   </div>
-  <%= partial "partials/footer" %>
   <%= javascript_include_tag 'all' %>
 </body>
 </html>

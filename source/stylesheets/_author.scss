@@ -1,70 +1,102 @@
 .author {
-  .inner {
-    display: flex;
-    align-items: center;
-  }
+  .twitter {
+    a {
+      color: #59adec;
 
+      &:hover {
+        color: #fff;
+        background-color: #59adec;
+      }
+    }
+  }
+  .github {
+    a {
+      color: $font-color;
+
+      &:hover {
+        color: #fff;
+        background-color: $font-color;
+      }
+    }
+  }
+}
+
+.About {
   h1 {
-    margin-bottom: 5px;
-    font-size: 1.4rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 1;
   }
-
-  p {
-    margin: 0;
+  h2 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    line-height: 1;
     color: $font-color-sub;
   }
+}
 
-  .portrait {
-    margin-right: 30px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-  }
+.Portrait {
+  width: 100%;
+}
 
-  .social-links {
-    margin: 5px 0 0 0;
-    padding: 0;
+.Bio {
+  font-size: .8rem;
+}
 
-    li {
-      display: inline-block;
-      margin-right: 15px;
+.Contact {
+  margin-top: 20px;
+}
 
-      .lsf {
-        margin-right: 6px;
-        font-size: 20px;
-        vertical-align: -1px;
-      }
+.Contact__Heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
-      a {
-        border-radius: 2px;
-        padding: 2px 6px 3px;
-        font-size: 15px;
+.ContactList__Item {
+  display: inline-block;
+  margin-right: 15px;
 
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
+  a {
+    border-radius: 2px;
+    padding: 2px 6px 3px;
+    font-size: 15px;
 
-    .twitter {
-      a {
-        color: #59adec;
-
-        &:hover {
-          color: #fff;
-          background-color: #59adec;
-        }
-      }
-    }
-    .github {
-      a {
-        color: $font-color;
-
-        &:hover {
-          color: #fff;
-          background-color: $font-color;
-        }
-      }
+    &:hover {
+      text-decoration: none;
     }
   }
+
+  .lsf {
+    margin-right: 6px;
+    font-size: 20px;
+    vertical-align: -1px;
+  }
+}
+
+.ContactList__Item.-twitter {
+  a {
+    color: $twitter;
+
+    &:hover {
+      color: #fff;
+      background-color: $twitter;
+    }
+  }
+}
+
+.ContactList__Item.-github {
+  a {
+    color: $font-color;
+
+    &:hover {
+      color: #fff;
+      background-color: $font-color;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  
 }

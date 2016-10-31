@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="keywords" content="<%= current_page.data.tags unless current_page.data.tags.nil? %>">
   <meta name="description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
-  <meta property="og:title" content="<%= current_article.title unless current_article.nil? %> - blog.nakanishy.com">
+  <meta property="og:title" content="<%= current_article.title unless current_article.nil? %> - @nakanishy's blog">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://blog.nakanishy.com">
-  <meta property="og:site_name" content="blog.nakanishy.com">
+  <meta property="og:site_name" content="@nakanishy's blog">
   <meta property="og:description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
   <meta property="og:image" content="https://blog.nakanishy.com/images/<%= current_resource.data.eyecatch %>">
   <meta property="fb:app_id" content="1086943964688762">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<%= current_article.title unless current_article.nil? %> - blog.nakanishy.com">
+  <meta name="twitter:title" content="<%= current_article.title unless current_article.nil? %> - @nakanishy's blog">
   <meta name="twitter:description" content="<%= current_page.data.description unless current_page.data.description.nil? %>">
   <meta name="twitter:creator" content="@nakanishy">
   <meta name="twitter:image:src" content="https://blog.nakanishy.com/images/<%= current_resource.data.eyecatch %>">
-  <title><%= current_article.title unless current_article.nil? %> - blog.nakanishy.com</title>
-  <link rel="shortcut icon" href="./images/favicon.ico">
+  <title><%= current_article.title unless current_article.nil? %> - @nakanishy's blog</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
   <%= stylesheet_link_tag 'nakanishy' %>
   <link href="//fonts.googleapis.com/css?family=Lato:100,300,400,700" rel="stylesheet" type="text/css">
   <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
@@ -30,62 +30,38 @@
       <article class="article">
         <header>
           <h1><%= current_article.title %></h1>
-          <date datetime="<%= current_article.date %>">
-            <%= current_article.date.strftime('%b %e, %Y') %>
-          </date>
-          <ul class="tags">
-            <% current_article.tags.each do |tag| %>
-              <li><a href="<%= tag_path(tag) %>"><%= tag %></a></li>
-            <% end %>
-          </ul>
-        </header>
-        <%= yield %>
-        <footer>
-          <div class="tag-sns-wrap">
-            <ul class="tags">
+          <div class="Meta">
+            <date class="Meta__Item" datetime="<%= current_article.date %>">
+              <%= current_article.date.strftime('%b %e, %Y') %>
+            </date>
+            <ul class="Meta__Item tags">
               <% current_article.tags.each do |tag| %>
                 <li><a href="<%= tag_path(tag) %>"><%= tag %></a></li>
               <% end %>
             </ul>
-            <ul class="sns-links">
-              <li class="twitter">
-                <a href="https://twitter.com/intent/tweet?url=https://blog.nakanishy.com<%= current_page.url %>&text=<%= current_page.data.title %>" title="Twitterで共有" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;">
-                  <i class="lsf">twitter</i>
-                </a>
-              </li>
-              <li class="hatebu">
-                <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https://blog.nakanishy.com<%= current_page.url %>" title="はてブで保存" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=510');return false;" >
-                  <i class="lsf">hatenabookmark</i>
+            <ul class="Meta__Item -right ShareLinks">
+              <li class="ShareLinks__Item">
+                <a class="ShareLinks__Anchor -twitter" href="https://twitter.com/intent/tweet?url=https://blog.nakanishy.com<%= current_page.url %>&text=<%= current_page.data.title %>" title="Twitterで共有" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;">
+                  <i class="ShareLinks__Icon lsf">twitter</i>Twitterでシェア
                 </a>
               </li>
             </ul>
           </div>
-          <div class="next-prev-link">
-            <div class="previous">
-              <% previous_article = current_article.previous_article %>
-              <% if previous_article %>
-                <% link_to  previous_article.url, :class => "previous-link" do %>
-                  <span class="arrow left"></span>
-                  <span><%= previous_article.title %></span>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="next">
-              <% next_article = current_article.next_article %>
-              <% if next_article %>
-                <% link_to next_article.url, :class => "next-link" do %>
-                  <span><%= next_article.title %></span>
-                  <span class="arrow"></span>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
+        </header>
+        <%= yield %>
+        <footer class="PleaseShare">
+          <i class="lsf" role="presentation">twitter</i>
+          <span>
+            この記事が気に入った方は、
+            <a href="https://twitter.com/intent/tweet?url=https://blog.nakanishy.com<%= current_page.url %>&text=<%= current_page.data.title %>" title="Twitterで共有" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');return false;">
+              Twitterでシェア
+            </a>
+            して頂けるとうれしいです🐰
+          </span>
         </footer>
-        <%= partial 'partials/author' %>
       </article>
     </div>
   </div>
-  <%= partial 'partials/footer' %>
   <%= javascript_include_tag 'all' %>
 </body>
 </html>

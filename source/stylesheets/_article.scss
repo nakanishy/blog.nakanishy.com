@@ -5,7 +5,7 @@ $article-margin-bottom: 1.2rem;
     margin-bottom: 2.5rem;
   }
   h1 {
-    margin-bottom: $article-margin-bottom;
+    margin-bottom: $article-margin-bottom * .5;
   }
   h2 {
     margin: 3rem 0 $article-margin-bottom;
@@ -31,7 +31,6 @@ $article-margin-bottom: 1.2rem;
       font-family: inherit;
     }
     date {
-      display: inline-block;
       margin-right: 10px;
       font-size: .9rem;
       font-family: inherit;
@@ -173,22 +172,18 @@ $article-margin-bottom: 1.2rem;
       }
     }
   }
-  footer {
-    .tags, .sns-links {
-      margin: 0;
-      font-family: inherit;
-    }
-  }
 }
 
-.tag-sns-wrap {
+.Meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+
+.Meta__Item.-right {
+  margin-left: auto !important;
 }
 
 .tags {
-  display: inline-block;
   list-style: none;
   li {
     display: inline-block;
@@ -208,92 +203,52 @@ $article-margin-bottom: 1.2rem;
   }
 }
 
-.sns-links {
+.ShareLinks {
+  margin: 0 !important;
+  padding: 0;
   list-style: none;
+}
 
-  // 共通
-  li {
-    display: inline-block;
-    margin-right: 5px;
-    a {
-      padding: 5px;
-      border-radius: 2px;
-      color: #ccc;
-      font-size: 30px;
-      transition: color .2s ease;
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-  .twitter {
-    a {
-      &:hover {
-        color: #59adec;
-      }
-    }
-  }
-  .hatebu {
-    a {
-      &:hover {
-        color: #008fde;
-      }
-    }
+.ShareLinks__Item {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.ShareLinks__Anchor {
+  padding: 5px;
+  border-radius: 2px;
+  transition: opacity .2s ease;
+  &:hover {
+    text-decoration: none;
   }
 }
 
-.arrow {
-  display:inline-block;
-  width: 10px;
-  height: 10px;
-  line-height: 10px;
-  border-top:3px solid #a0a2aa;
-  border-right:3px solid #aaa;
-  -ms-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+.ShareLinks__Icon {
+  margin-right: 7px;
+  font-size: 25px;
+  vertical-align: -2px;
 }
 
-.arrow.left {
-  -ms-transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
+.ShareLinks__Anchor.-twitter {
+  color: $twitter;
+  opacity: .6;
+  &:hover {
+    opacity: 1;
+  }
 }
 
-.next-prev-link {
-  position: relative;
-  margin: 2rem 0;
-  display: -webkit-flex;
+.PleaseShare {
   display: flex;
-  .previous, .next {
-    position: relative;
-    margin: 0 20px;
-    .next-link, .previous-link {
-      display: block;
-      font-size: .9rem;
-      line-height: 1.3;
-    }
-  }
-  .previous {
-    -webkit-flex: 1;
-    flex: 1;
-    .arrow {
-      position: absolute;
-      top: 3px;
-      left: -20px;
-    }
-  }
-  .next {
-    -webkit-flex: 1;
-    flex: 1;
-    text-align: right;
-    .arrow {
-      position: absolute;
-      top: 3px;
-      right: -20px;
-    }
+  align-items: center;
+  padding: 7px 25px;
+  background: $light-gray;
+  border-radius: 2px;
+  color: $font-color-sub2;
+
+  .lsf {
+    margin-right: 10px;
+    color: $twitter;
+    font-size: 30px;
   }
 }
 

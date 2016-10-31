@@ -1,34 +1,46 @@
-.header {
+.Header {
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: $header-height;
-  background: #fff;
-  border-bottom: 1px solid #d8dbde;
-  .logo {
-    a {
-      display: inline-block;
-      padding: 0 30px;
-      height: $header-height;
-      color: $font-color;
-      line-height: $header-height;
-      transition: opacity .2s ease-out;
-      img {
-        display: inline;
-        margin-right: 10px;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        vertical-align: middle;
-      }
-      &:hover {
-        text-decoration: none;
-        opacity: .6;
-      }
-    }
+  background: $dark-gray;
+  z-index: 1000;
+}
+
+.Header__Item.-right {
+  margin-left: auto;
+}
+
+.Logo__Anchor {
+  display: block;
+  padding: 0 30px;
+  height: $header-height;
+  color: $white;
+  font-size: 1.2rem;
+  line-height: $header-height;
+  opacity: .6;
+  transition: opacity .2s ease-out;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
   }
 }
 
+.Navigation__Anchor {
+  display: block;
+  padding: 0 40px;
+  height: $header-height;
+  color: $white;
+  line-height: $header-height;
+  opacity: .6;
+  transition: opacity .2s ease-out;
 
-
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+}
