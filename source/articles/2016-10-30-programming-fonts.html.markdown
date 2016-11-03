@@ -1,13 +1,12 @@
 ---
-title: プログラミングフォント10選 in 2016
+title: プログラミングフォントxx選
 date: 2016-10-30 0:31 JST
 tags: Font
 description: 
-eyecatch: yarn.jpg
+eyecatch: programming-fonts/monaco.png
 published: true
 ---
 
-先日、JavaScriptの新たなパッケージマネージャー[Yarnが公開](https://code.facebook.com/posts/1840075619545360/yarn-a-new-package-manager-for-javascript/)され、フロント界隈で話題なので調べた。
 
 ## Monaco
 
