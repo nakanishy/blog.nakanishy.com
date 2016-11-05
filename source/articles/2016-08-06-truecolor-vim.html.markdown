@@ -1,16 +1,17 @@
 ---
 title: ターミナル環境 (iTerm, vim, tmux) をフルカラーで使う
 date: 2016-08-06 21:50 JST
-tags: terminal, neovim, tmux
+tags: iTerm, neovim, tmux
 description: iTerm2, neovim, tmuxをTrue Color (24 bit color) で使うための方法
+eyecatch: true-color-vim/true-color-vim.png
 published: true
 ---
 
 MacのターミナルやiTermなどターミナル環境において、デフォルトでは16色しか表示することができない。
 [iTerm2を256色で使用する](http://qiita.com/muniere/items/e6c5c48a541401ee5af3)方法もあるが、色数としてはまだまだ不十分。
-そこで、ターミナル環境においてもTrue Color (24bit color) 約1667万色を使えるようにしてみた、という記録。
+そこで、ターミナル環境においてもTrue Color (24bit color) 約1667万色を使えるようにしてみたのでメモ。
 
-[![true color vim](true-color-vim.png 'true color vim')](/images/true-color-vim.png)
+[![true color vim](/images/true-color-vim/true-color-vim.png 'true color vim')](/images/true-color-vim/true-color-vim.png)
 
 ## True Colorが表示できる環境
 
