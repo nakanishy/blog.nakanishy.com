@@ -120,7 +120,7 @@ end
 activate :deploy do |deploy|
   deploy.method   = :git
   deploy.branch   = 'gh-pages'
-  deploy.strategy = :force_push
+  deploy.host     = "https://#{ENV['GITHUB_ACCESS_TOKEN']}@github.com/blog.nakanishy.com.git"
 end
 
 =begin

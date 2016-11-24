@@ -25,4 +25,4 @@ deployment:
     commands:
       - git config --global user.name "Keita Nakanishi"
       - git config --global user.email "nakanishy@yahoo.com"
-      - bundle exec middleman deploy
+      - bundle exec middleman deploy --build-before
