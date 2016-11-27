@@ -1,16 +1,17 @@
-box: ruby
+box: evertrip/ruby-node
 
 build:
     steps:
-        - bundle-install
+        - npm-install:
+            use-cache: false
         - script:
             name: install bower
             code: sudo npm install -g bower
-
         - script:
             name: run bower install
             code: bower install --config.interactive=false
 
+        - bundle-install
         - script:
             name: middleman build
             code: bundle exec middleman build
