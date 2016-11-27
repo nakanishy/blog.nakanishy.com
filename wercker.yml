@@ -1,0 +1,22 @@
+box: ruby
+
+build:
+    steps:
+        - bundle-install
+        - script:
+            name: install bower
+            code: sudo npm install -g bower
+
+        - script:
+            name: run bower install
+            code: bower install --config.interactive=false
+
+        - script:
+            name: middleman build
+            code: bundle exec middleman build
+
+deploy:
+    steps:
+        - script:
+            name: deploy to the server
+            code: bundle exec middleman deploy
