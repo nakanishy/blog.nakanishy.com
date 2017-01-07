@@ -1,8 +1,9 @@
 ---
 title: Realforce 91UBK を 7年間使いつづけたのでレビュー
-date: 2016-12-18 00:00 JST
+date: 2017-01-07 00:00 JST
 tags: Review
-description:
+description: Amazon の購入履歴を遡ると、2009年2月28日に Realforce を購入していた。かれこれ7年以上使用し続けていることになる。本稿では、7年間使用し続けてわかった Realforce の良いところ・悪いところを紹介する。
+eyecatch: realforce-review/realforce.jpg
 published: true
 ---
 
