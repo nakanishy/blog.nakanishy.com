@@ -3,7 +3,7 @@ title: Mastodon（マストドン）の空いているユーザー名を一括�
 date: 2017-04-18 00:00 JST
 tags: Release
 description: 空きアカウント検索サービス「Availy」を Mastodon に対応させました。
-eyecatch: availy-for-mastodon/availy.png
+eyecatch: availy-for-mastodon/social.png
 published: true
 ---
 
