@@ -1,5 +1,5 @@
 ---
-title: Mastodon（マストドン）の空いているユーザー名を一括検索
+title: Mastodon（マストドン）の空いているユーザー名を一括検索する機能をリリースしました
 date: 2017-04-18 00:00 JST
 tags: Release
 description: 空きアカウント検索サービス「Availy」を Mastodon に対応させました。
